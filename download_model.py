@@ -7,7 +7,7 @@ import platform
 
 # Repository ID
 repo_id = "hexgrad/Kokoro-82M"
-repo_id2="Remsky/kokoro-82m-mirror"
+repo_id2="hexgrad/Kokoro-82M"
 # Set up the cache directory
 cache_dir = "./cache"
 os.makedirs(cache_dir, exist_ok=True)
@@ -16,7 +16,7 @@ os.makedirs(cache_dir, exist_ok=True)
 KOKORO_DIR = "./KOKORO"
 VOICES_DIR = os.path.join(KOKORO_DIR, "voices")
 FP16_DIR = os.path.join(KOKORO_DIR, "fp16")
-KOKORO_FILE = "kokoro-v0_19.pth"
+KOKORO_FILE = "kokoro-v1_0.pth"
 FP16_FILE = "fp16/kokoro-v0_19-half.pth"
 
 def download_files(repo_id, filenames, destination_dir, cache_dir):
@@ -65,7 +65,7 @@ def download_base_models():
     """Downloads Kokoro base model and fp16 version if missing."""
 
     download_files(repo_id2, [KOKORO_FILE], KOKORO_DIR, cache_dir)
-    download_files(repo_id2, [FP16_FILE], FP16_DIR, cache_dir)
+    #download_files(repo_id2, [FP16_FILE], FP16_DIR, cache_dir)
 
 def setup_batch_file():
     """Creates a 'run_app.bat' file for Windows if it doesn't exist."""
